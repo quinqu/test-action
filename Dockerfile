@@ -5,17 +5,14 @@ COPY --from=golang:1.13-alpine /usr/local/go/ /usr/local/go/
  
 ENV PATH="/usr/local/go/bin:${PATH}"
 
-# RUN apk --update --no-cache add git bash py3-pip
-
-# RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing hub
-
-RUN ls 
-RUN pwd 
-
-
+RUN apk --update --no-cache add git bash 
 
 COPY main.go /main.go
 
-RUN chmod +x main.go
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/main.go"]
+RUN chmod +x /main.go
+RUN chmod +x /entrypoint.sh
+
+
+ENTRYPOINT ["/entrypoint.sh"]
