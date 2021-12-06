@@ -1,2 +1,3 @@
-#!/bin/sh -l
+#!/bin/bash
+
 echo "hello world!"
