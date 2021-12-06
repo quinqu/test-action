@@ -18,5 +18,9 @@ runs:
   steps:
     - name: Installing the latest version of Go.
       uses: actions/setup-go@v2
+    - run: pwd 
+      shell: bash
+    - run: ls 
+      shell: bash
     - run: go run ./main.go
       shell: bash
