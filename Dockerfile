@@ -9,6 +9,8 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 
 # RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing hub
 
-COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x main.go
 
-ENTRYPOINT ["/entrypoint.sh"]
+COPY main.go /main.go
+
+ENTRYPOINT ["/main.go"]
