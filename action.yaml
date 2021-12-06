@@ -8,19 +8,13 @@ inputs:
   repo:
     description: 'Repo owner and name (<repo-owner>/<repo-name>)'
     required: true
-  
+  token: 
+    required: true
+    description: 'Repo owner and name (<repo-owner>/<repo-name>)'
 outputs: 
   created: 
     value: ${{ steps.pr_created.outputs.created }}
     description: "Created pull request. "
 runs:
-  using: "composite"
-  steps:
-    - name: Installing the latest version of Go.
-      uses: actions/setup-go@v2
-    - run: pwd 
-      shell: bash
-    - run: ls 
-      shell: bash
-    - run: go run ./main.go
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
