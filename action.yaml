@@ -1,0 +1,19 @@
+name: 'Test'
+author: 'quinqu'
+description: 'Test action'
+inputs:
+  number:  
+    description: 'Pull request number'
+    required: true
+  repo:
+    description: 'Repo owner and name (<repo-owner>/<repo-name>)'
+    required: true
+  
+outputs: 
+  created: 
+    value: ${{ steps.pr_created.outputs.created }}
+    description: "Created pull request. "
+runs:
+  using: "composite"
+  steps:
+    - run: .github/workflows/main.go
