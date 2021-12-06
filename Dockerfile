@@ -8,11 +8,14 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 # RUN apk --update --no-cache add git bash py3-pip
 
 # RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing hub
+
 RUN ls 
 RUN pwd 
 
-RUN chmod +x main.go
+
 
 COPY main.go /main.go
+
+RUN chmod +x main.go
 
 ENTRYPOINT ["/main.go"]
