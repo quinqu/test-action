@@ -7,5 +7,5 @@ import (
 
 func main() {
 	fmt.Println("hello world")
-	fmt.Println(os.Getenv("GITHUB_EVENT"))
+	fmt.Println(os.Getenv("GITHUB_EVENT_NAME"))
 }
