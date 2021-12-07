@@ -9,10 +9,10 @@ RUN apk --update --no-cache add git bash
 
 COPY main.go /main.go
 
-# COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /main.go
-# RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 
-ENTRYPOINT ["/main.go"]
+ENTRYPOINT ["/entrypoint.sh"]
