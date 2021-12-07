@@ -2,6 +2,6 @@
 
 echo "hello world!"
 env
-echo $GITHUB_EVENT
+# echo $GITHUB_EVENT
 
-go run ./main.go
+go run /main.go
